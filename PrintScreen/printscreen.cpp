@@ -21,6 +21,7 @@ PrintScreen::PrintScreen(QWidget *parent):
 
 PrintScreen::~PrintScreen()
 {
+    //printscreen
 }
 
 void PrintScreen::mouseMoveEvent(QMouseEvent* event)
