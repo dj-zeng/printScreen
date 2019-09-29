@@ -89,7 +89,8 @@ void PrintScreen::paintEvent(QPaintEvent *event)
         m_printPixmap = m_loadPixmap.copy(selectedRect);
         m_painter.drawPixmap(selectedRect.topLeft(),m_printPixmap);
         m_painter.drawRect(selectedRect);
-        m_painter.drawText(selectedRect.topLeft(),QString::number(selectedRect.x()));
+        QString str = QString::number(selectedRect.width())+" x "+QString::number(selectedRect.height());
+        m_painter.drawText(selectedRect.topLeft(),str);
     }
     m_painter.end();
     return QWidget::paintEvent(event);
@@ -100,7 +101,7 @@ QRect PrintScreen::getRect(QPoint *begin,QPoint *end)
 {
     int x,y,width,height;
 
-    width = qAbs(begin->x()-end->x());
+    width  = qAbs(begin->x()-end->x());
     height = qAbs(begin->y()-end->y());
 
     x = begin->x() < end->x()? begin->x():end->x();

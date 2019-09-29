@@ -18,8 +18,10 @@ public:
 private:
     Ui::MainMenu *ui;
     PrintScreen  *printScreen;
+
 private slots:
     void slot_pbtn_PrintScreen();
+    void slot_pbtn_save();
     void slot_DisplyPixmap(QPixmap);
 };
 
